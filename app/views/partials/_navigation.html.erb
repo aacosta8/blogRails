@@ -1,0 +1,30 @@
+<header>
+  <nav class="navbar navbar-inverse" style="border-radius: 0px">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span> Alex Acosta</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Inicio" ,root_path %></li>
+        <li><%= link_to "Diseño" ,root_path  %></li>
+        <li><%= link_to "Progamación" ,root_path  %></li>
+        <li><%= link_to "Tecnología" ,root_path  %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in?%>
+          <li><%= link_to  destroy_user_session_path, method: :delete do %>
+            <span class="glyphicon glyphicon-log-in"></span> Cerrar sesión<%end%>
+          </li>
+        <%else%>
+        <li><%= link_to  new_user_registration_path do %>
+          <span class="glyphicon glyphicon-user"></span> Registrarse<%end%>
+        </li>
+        <li><%= link_to  new_user_session_path do %>
+          <span class="glyphicon glyphicon-log-in"></span> Iniciar sesión<%end%>
+        </li>
+
+        <%end%>
+      </ul>
+    </div>
+  </nav>
+</header>

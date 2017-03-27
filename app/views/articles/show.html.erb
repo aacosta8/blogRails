@@ -1,0 +1,8 @@
+<h1><%= @article.title%></h1>
+<div>
+	<%= @article.body%> - <%= link_to "x" , @article , method: :delete %>
+</div>
+
+<div>
+	<%= link_to  "Editar", edit_article_path(@article)%>
+</div>

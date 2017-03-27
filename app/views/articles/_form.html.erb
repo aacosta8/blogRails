@@ -1,0 +1,21 @@
+<h1><%= name %> artículo </h1>
+<br><br>
+<%=form_for(@article) do |f|%>
+  <% @article.errors.full_messages.each do |m|%>
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <%=m%>
+    </div>
+  <%end%>
+  <div class="form-group">
+    <%= label_tag(:title, "Titulo") %>
+    <%= f.text_field :title, placeholder: "Título", class:"form-control"%>
+  </div>
+  <div class="form-group">
+    <%= label_tag(:body, "Cuerpo") %>
+    <%= f.text_area :body, placeholder: "Escribe aquí el artículo", style:"height:250px", class:"form-control"%>
+  </div>
+  <div class="form-group">
+    <%=f.submit "Guardar", class:"btn"%>
+  </div>
+<%end%>
