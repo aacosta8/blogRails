@@ -1,1 +1,6 @@
-<h1>Bienvenidos a nuestro blog!!!</h1>
+<% if user_signed_in?%>
+<h1>Bienvenido <%= current_user.email.split("@")[0]%> a nuestro blog!!!</h1>
+<%else%>
+<h1>Bienvenido a nuestro blog!!!</h1>
+
+<%end%>
