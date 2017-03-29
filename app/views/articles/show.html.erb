@@ -5,6 +5,10 @@
 	Escrito por: <%= @article.user.email%>
 </p>
 <%end%>
+
+<p>
+	Visitas: <%= @article.visits_count%>
+</p>
 <div>
 	<%= @article.body%> - <%= link_to "x" , @article , method: :delete %>
 </div>
