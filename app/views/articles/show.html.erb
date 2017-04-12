@@ -12,7 +12,24 @@
 <div>
 	<%= @article.body%> - <%= link_to "x" , @article , method: :delete %>
 </div>
-
+<br>
 <div>
 	<%= link_to  "Editar", edit_article_path(@article)%>
+</div>
+
+<div class="form-group">
+	<h3>Comentarios</h3>
+	<%= render "comments/form"%>
+	<div class="container">
+
+		<%@article.comments.each do |comment|%>
+		<div class="panel-group">
+	    <div class="panel panel-default">
+				<div class="panel-heading">Creado por: <%=comment.user.email%></div>
+				<div class="panel-body"><%=comment.body%></div>
+			</div>
+		</div>
+		<%end%>
+
+	</div>
 </div>
