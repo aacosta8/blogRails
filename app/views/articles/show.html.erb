@@ -20,16 +20,21 @@
 <div class="form-group">
 	<h3>Comentarios</h3>
 	<%= render "comments/form"%>
-	<div class="container">
+		<!-- <div class="container" id="comment-box"> -->
+		<ul id="comments-box">
+
 
 		<%@article.comments.each do |comment|%>
-		<div class="panel-group">
+		<li>
+			<%=comment.body%> - <%=comment.user.email%>
+		</li>
+		<!-- <div class="panel-group">
 	    <div class="panel panel-default">
 				<div class="panel-heading">Creado por: <%=comment.user.email%></div>
 				<div class="panel-body"><%=comment.body%></div>
 			</div>
-		</div>
+		</div> -->
 		<%end%>
-
-	</div>
+		</ul>
+	<!-- </div> -->
 </div>

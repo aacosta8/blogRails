@@ -1,4 +1,5 @@
-<%= form_for([@article,@comment]) do |f| %>
+<%= form_for([@article,@comment], remote: true,
+        html: { id: "comments-form", :"data-type" => "json"}) do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -13,8 +14,9 @@
 
 <div class="input-group">
   <%= f.text_area :body , class:"form-control" , style:"resize:none"%>
-  <span class="input-group-addon"><%=f.submit "Guardar"%></span>
+  <span class="input-group-addon"><%=f.submit "Guardar" , class:"btn"%></span>
 </div>
+
 <% end %>
 <br>
 <br>
