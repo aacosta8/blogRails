@@ -6,6 +6,10 @@
 </p>
 <%end%>
 
+<div class="form-group">
+	<%= image_tag @article.cover.url()%>
+</div>
+
 <p>
 	Visitas: <%= @article.visits_count%>
 </p>
