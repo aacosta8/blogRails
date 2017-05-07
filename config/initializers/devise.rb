@@ -13,7 +13,7 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
-    config.secret_key =  <%= Figaro.env.secret_key_base %>
+    config.secret_key =  Figaro.env.secret_key_base
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
