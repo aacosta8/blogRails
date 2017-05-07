@@ -22,3 +22,6 @@ push.sh
 # Ignore Byebug command history file.
 .byebug_history
 erd.pdf
+
+# Ignore application configuration
+/config/application.yml

@@ -6,4 +6,4 @@
 <%end%>
 
 <%= "Hola"%>
-<%=ENV['POSTGRES_PASSWORD']%>
+<%= Figaro.env.POSTGRES %>
