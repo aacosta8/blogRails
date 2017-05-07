@@ -24,7 +24,7 @@ production:
   adapter: postgresql
   pool: 5
   username: postgres
-  password: <%= ENV['POSTGRES_PASSWORD']%>
+  password: 32205045
   host: localhost
   port: 5432
   database: blog_rails_production
