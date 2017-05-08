@@ -23,8 +23,8 @@ test:
 production:
   adapter: postgresql
   pool: 5
-  username: postgres
-  password: 32205045
+  username: <%= Figaro.env.USERNAME_DATA_BASE %>
+  password: <%= Figaro.env.PASSWORD_DATA_BASE %>
   host: localhost
   port: 5432
   database: blog_rails_production
