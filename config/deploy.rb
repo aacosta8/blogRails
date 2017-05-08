@@ -8,6 +8,7 @@ set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
 # Don't change these unless you know what you're doing
+set :linked_files, %w{config/application.yml}
 set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
@@ -22,7 +23,7 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
-set :linked_files, %w{config/application.yml}
+
 
 ## Defaults:
 # set :scm,           :git
