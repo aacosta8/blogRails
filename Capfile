@@ -7,10 +7,6 @@ require 'capistrano/bundler'
 require 'capistrano/rvm'
 require 'capistrano/puma'
 require "capistrano/scm/git"
-
-require 'figaro'
-Figaro.application = Figaro::Application.new(environment: 'production', path: File.expand_path('../config/application.yml', __FILE__))
-Figaro.load
 install_plugin Capistrano::SCM::Git
 install_plugin Capistrano::Puma
 
