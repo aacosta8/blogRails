@@ -5,10 +5,10 @@
         <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span> Alex Acosta</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><%= link_to "Inicio" ,root_path %></li>
-        <li><%= link_to "Diseño" ,root_path  %></li>
-        <li><%= link_to "Progamación" ,root_path  %></li>
-        <li><%= link_to "Tecnología" ,root_path  %></li>
+        <li><%= link_to "Artículos" ,articles_path %></li>
+        <% @categories.each do |category|%>
+        <li><%= link_to category.name , category  %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in?%>

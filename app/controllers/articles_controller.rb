@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 	#get "/articles/new"
 	def new
 		@article = Article.new
+		@categories = Category.all
 	end
 
 	def edit
@@ -23,6 +24,7 @@ class ArticlesController < ApplicationController
 	#post "/articles"
 	def create
 		@article = current_user.articles.new(article_params)
+		@article.categories = params[:categories]
 		if @article.save
 			redirect_to @article
 		else
