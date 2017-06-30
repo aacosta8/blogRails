@@ -2,6 +2,8 @@ class Article < ApplicationRecord
 
   belongs_to :user
   has_many :comments
+  has_many :has_categories
+  has_many :categories , through: :has_categories
 
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true , length: { minimum: 20 }
@@ -19,6 +21,7 @@ class Article < ApplicationRecord
   def update_visits_count
       self.update(visits_count: self.visits_count + 1)
   end
+
   private
 
   def save_categories

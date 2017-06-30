@@ -13,6 +13,14 @@
 <p>
 	Visitas: <%= @article.visits_count%>
 </p>
+
+<p>
+	Categorias:
+	<% @article.categories.each do |category|%>
+			<%= link_to category.name, category, style:"color:#{category.color}"%>
+	<%end%>
+</p>
+
 <div>
 	<%= @article.body%> - <%= link_to "x" , @article , method: :delete %>
 </div>
