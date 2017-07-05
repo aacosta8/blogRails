@@ -27,6 +27,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'pg', '~> 0.18.4'
 gem "figaro"
+gem "aasm"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
