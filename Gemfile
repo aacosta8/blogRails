@@ -28,6 +28,7 @@ gem 'autoprefixer-rails'
 gem 'pg', '~> 0.18.4'
 gem "figaro"
 gem "aasm"
+gem "will_paginate"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
