@@ -29,7 +29,8 @@ gem 'pg', '~> 0.18.4'
 gem "figaro"
 gem "aasm"
 gem "will_paginate"
-
+gem 'epic-editor-rails', :git => 'https://github.com/aacosta8/epic-editor-rails'
+gem "sanitize"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

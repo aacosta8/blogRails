@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
 	#get "/articles/new"
 	def new
 		@article = Article.new
+		@article.markup_body = " "
 		@categories = Category.all
 	end
 
@@ -61,7 +62,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def article_params
-		params.require(:article).permit(:title,:body,:cover)
+		params.require(:article).permit(:title,:body,:cover,:markup_body)
 	end
 
 end

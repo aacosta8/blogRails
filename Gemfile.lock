@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/aacosta8/epic-editor-rails
+  revision: 4f676d9cd50aea2804659b9b1ae727cd8a2231ab
+  specs:
+    epic-editor-rails (0.2.4)
+      railties (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,6 +87,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    crass (1.0.2)
     debug_inspector (0.0.2)
     devise (4.2.1)
       bcrypt (~> 3.0)
@@ -126,6 +134,8 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    nokogumbo (1.4.13)
+      nokogiri
     orm_adapter (0.5.0)
     paperclip (5.1.0)
       activemodel (>= 4.2.0)
@@ -173,6 +183,10 @@ GEM
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     ruby-graphviz (1.2.3)
+    sanitize (4.5.0)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.4.4)
+      nokogumbo (~> 1.4.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -233,6 +247,7 @@ DEPENDENCIES
   capistrano3-puma
   coffee-rails (~> 4.2)
   devise
+  epic-editor-rails!
   figaro
   jbuilder (~> 2.5)
   jquery-rails
@@ -243,6 +258,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.2)
   rails-erd
+  sanitize
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

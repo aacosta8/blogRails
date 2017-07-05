@@ -1,6 +1,6 @@
 <h1><%= name %> artículo </h1>
 <br><br>
-<%=form_for(@article) do |f|%>
+<%=form_for(@article, html: {id:"articles_form"}) do |f|%>
   <% @article.errors.full_messages.each do |m|%>
     <div class="alert">
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
@@ -11,9 +11,15 @@
     <%= label_tag(:title, "Titulo") %>
     <%= f.text_field :title, placeholder: "Título", class:"form-control"%>
   </div>
+
+
+
+
   <div class="form-group">
     <%= label_tag(:body, "Cuerpo") %>
-    <%= f.text_area :body, placeholder: "Escribe aquí el artículo", style:"height:250px", class:"form-control"%>
+    <div id="epiceditor" style="height:250px;"></div>
+    <%= f.hidden_field :body, id:"body-textarea"%>
+    <%= f.hidden_field :markup_body, id:"markup-body-textarea"%>
   </div>
 
   <div class="form-group">
@@ -34,3 +40,20 @@
     <%=f.submit "Guardar", class:"btn"%>
   </div>
 <%end%>
+
+
+<script>
+  var editor = new EpicEditor({
+    textarea:"markup-body-textarea",
+    file:{
+      name:"nuevo_articulo"
+    }
+  });
+
+  editor.load();
+  $("#articles_form").on("submit", function () {
+    $("#body-textarea").val( editor.exportFile("nuevo_articulo", "html"));
+    $("#markup-body-textarea").val( editor.exportFile("nuevo_articulo"));
+  });
+
+</script>
