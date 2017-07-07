@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 	#get "/articles"
 	def index
 		#@articles = Article.published Tambien se puede debido a la gema AASM
-		@articles = Article.paginate(page: params[:page], per_page:5).publicados.recientes
+		@articles = Article.paginate(page: params[:page], per_page:6).publicados.recientes
 	end
 
 	#get "/articles/:id"

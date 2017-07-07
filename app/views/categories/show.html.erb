@@ -1,14 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h2 style="color:<%=@category.color%>;">Articulos de <%=@category.name%> </h2>
-<%@category.articles.each do  |article|%>
-<div class="form-group">
-  <h3><%= link_to article.title , article%></h3>
-  <div>
-  	<%= article.body%> - <%= link_to "x" , article , method: :delete  %>
-  </div>
+
+<div class="row">
+<%= render @category.articles%>
 </div>
 
-<%end%>
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
