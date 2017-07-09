@@ -1,53 +1,31 @@
-<h1><%= @article.title%></h1>
+<article class="bottom-space">
+  <div class="row center-xs">
+    <div class="col-xs-12 light-border col-md-12">
+      <h1 class="be-big orange"><%= @article.title%></h1>
+      <p class="text-right be-small">
+        <%=link_to "Atrás", articles_path, class:"underline"%>
+         - <span class="orange"> <%=@article.visits_count%>Visita(s) </span>
+         - <% unless @article.user.nil? %>
+        	Escrito por: <%= @article.user.email%>
+        <%end%>
 
-<% unless @article.user.nil? %>
-<p>
-	Escrito por: <%= @article.user.email%>
-</p>
-<%end%>
+      </p>
 
-<div class="form-group">
-	<%= image_tag @article.cover.url()%>
-</div>
+      <div class="text-justify">
+        <%= Sanitize.fragment(@article.body , Sanitize::Config::RELAXED).html_safe%>
+        <p>
+          
+          Categorias:
+        	<% @article.categories.each do |category|%>
+        			<%= link_to category.name, category, style:"color:#{category.color}"%>
+        	<%end%>
+        </p>
+      </div>
 
-<p>
-	Visitas: <%= @article.visits_count%>
-</p>
+      <div class="top-space">
+        <%= render "articles/comments"%>
+      </div>
 
-<p>
-	Categorias:
-	<% @article.categories.each do |category|%>
-			<%= link_to category.name, category, style:"color:#{category.color}"%>
-	<%end%>
-</p>
-
-<div>
-	<%= Sanitize.fragment(@article.body , Sanitize::Config::RELAXED).html_safe%>
-
-</div>
-<br>
-<div>
-	<%= link_to  "Editar", edit_article_path(@article)%> - <%= link_to "Eliminar" , @article , method: :delete %>
-</div>
-
-<div class="form-group">
-	<h3>Comentarios</h3>
-	<%= render "comments/form"%>
-		<!-- <div class="container" id="comment-box"> -->
-		<ul id="comments-box">
-
-
-		<%@article.comments.each do |comment|%>
-		<li>
-			<%=comment.body%> - <%=comment.user.email%>
-		</li>
-		<!-- <div class="panel-group">
-	    <div class="panel panel-default">
-				<div class="panel-heading">Creado por: <%=comment.user.email%></div>
-				<div class="panel-body"><%=comment.body%></div>
-			</div>
-		</div> -->
-		<%end%>
-		</ul>
-	<!-- </div> -->
-</div>
+    </div>
+  </div>
+</article>
