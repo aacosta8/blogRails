@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1><%= @article.title%></h1>
+    <p>
+      <%= truncate(@article.body, length: 30)%>
+    </p>
+  </body>
+</html>

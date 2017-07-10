@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :update, :destroy]
   end
   devise_for :users
-  root 'welcome#index'
+  root 'articles#index'
 
   get "/dashboard", to: "welcome#dashboard"
 
