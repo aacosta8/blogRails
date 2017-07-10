@@ -10,9 +10,11 @@
 <body>
 <%= render "partials/navigation"%>
 	<% if notice or alert %>
-	<p ><%= notice %></p>
-	<p ><%= alert %></p>
+	<div >
+		<%= notice %> <%= alert %>
+	</div>
 	<%end%>
+
 	<div style="width:80%; margin:0 auto;">
 	<%= yield %>
 	</div>

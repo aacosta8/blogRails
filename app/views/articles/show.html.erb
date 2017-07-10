@@ -1,4 +1,7 @@
 <article class="bottom-space">
+
+  <%= article_cover @article.cover.url%>
+
   <div class="row center-xs">
     <div class="col-xs-12 light-border col-md-12">
       <h1 class="be-big orange"><%= @article.title%></h1>
@@ -14,7 +17,7 @@
       <div class="text-justify">
         <%= Sanitize.fragment(@article.body , Sanitize::Config::RELAXED).html_safe%>
         <p>
-          
+
           Categorias:
         	<% @article.categories.each do |category|%>
         			<%= link_to category.name, category, style:"color:#{category.color}"%>
